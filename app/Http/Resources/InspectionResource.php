@@ -17,9 +17,12 @@ class InspectionResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'note' => $this->note,
+            'turbine_name' => $this->turbine->name,
+            'turbine_longitude' =>$this->turbine->longitude,
+            'turbine_latitude' =>$this->turbine->latitude,
+            'farm_name' => $this->turbine->farm->name,
             'inspection_date' => (string)$this->inspection_date,
-            'turbine' => new TurbineResource($this->whenLoaded('turbine')),
+            'note' => $this->note,
             'inspectionDetails'=>InspectionDetailResource::collection($this->whenLoaded('inspectionDetails')),
         ];
     }

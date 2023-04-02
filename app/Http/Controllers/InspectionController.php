@@ -13,7 +13,7 @@ class InspectionController extends Controller
      */
     public function index()
     {
-        return InspectionResource::collection(Inspection::with('turbine')->paginate(2));
+        return InspectionResource::collection(Inspection::with('turbine')->get());
     }
 
 
