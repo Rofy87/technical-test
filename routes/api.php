@@ -3,7 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\InspectionController;
-
+use \App\Http\Controllers\GradeController;
+use \App\Http\Controllers\FarmController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,3 +23,5 @@ use \App\Http\Controllers\InspectionController;
 Route::apiResource('inspections', InspectionController::class)->only([
     'index', 'show'
 ]);
+Route::get('grades', [GradeController::class, 'index']);
+Route::get('farms', [FarmController::class, 'index']);
