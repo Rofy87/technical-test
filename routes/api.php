@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\InspectionController;
 use \App\Http\Controllers\GradeController;
 use \App\Http\Controllers\FarmController;
+use \App\Http\Controllers\TurbineController;
+use \App\Http\Controllers\ComponentTypeController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -23,5 +25,9 @@ use \App\Http\Controllers\FarmController;
 Route::apiResource('inspections', InspectionController::class)->only([
     'index', 'show'
 ]);
+Route::apiResource('turbines', TurbineController::class)->only([
+    'index', 'show'
+]);
 Route::get('grades', [GradeController::class, 'index']);
 Route::get('farms', [FarmController::class, 'index']);
+Route::get('component_types', [ComponentTypeController::class, 'index']);

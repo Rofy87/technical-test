@@ -19,7 +19,7 @@ class ComponentResource extends JsonResource
             'id' => $this->id,
             'description' => $this->description,
             'serial_number' => $this->serial_number,
-            'component_type' => ComponentTypeResource::make($this->componentType),
+            'component_type' => $this->componentType->name,
         ];
     }
 }

@@ -21,7 +21,9 @@ class TurbineResource extends JsonResource
             'name' => $this->name,
             'longitude' => $this->longitude,
             'latitude' => $this->latitude,
-            'farm' => FarmResource::make($this->farm),
+            'farm' => $this->farm->name,
+            'components'=>ComponentResource::collection($this->whenLoaded('components')),
+
         ];
 
     }
