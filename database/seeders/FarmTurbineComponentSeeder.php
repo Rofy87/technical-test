@@ -16,7 +16,7 @@ class FarmTurbineComponentSeeder extends Seeder
      */
     public function run()
     {
-        Turbine::factory()->count(10)->create();
+        Turbine::factory()->count(7)->create();
 
     }
 
