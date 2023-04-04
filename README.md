@@ -42,12 +42,10 @@ This is an existing Laravel project that uses Sail for development and deploymen
 2. In the terminal, navigate to the project directory.
 3. Run `composer install` to install the PHP dependencies.
 4. Run `cp .env.example .env` to create a new `.env` file.
-5. Change Host to `DB_HOST=mysql` in `.env` if you are running it with sail
-6. Run `php artisan key:generate` to generate a new application key.
-7. Run `sail up -d` to start the development environment.
-8. Change Host to `DB_HOST=mysql` in `.env` if you are running it with sail
-9. Run `sail artisan migrate`
-10. Run `sail artisan db:seed`
+5. Change configuration in .env and docker-compose when needed based on your environment (I had to change the FORWARD_DB_PORT as the port is already taken to my local mysql and change the )
+6. Run `sail up -d` to start the development environment.
+7. Run `sail artisan migrate`
+8. Run `sail artisan db:seed`
 
 ### Stopping the Project
 
